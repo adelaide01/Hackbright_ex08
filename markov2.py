@@ -1,3 +1,5 @@
+Thanks to @cjerdonek for your help on this exercise!
+
 from sys import argv
 script, txt = argv
 
