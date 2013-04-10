@@ -97,7 +97,7 @@ def make_sentence(d):
 
 def main():
     """
-    Call the function.
+    Call the functions.
     
     """
     script, path = sys.argv
@@ -105,7 +105,6 @@ def main():
     word_list = strip_punction(text)
 
     d = make_dictionary(word_list)
-    print d
     print make_sentence(d)
 
 if __name__ == "__main__":
