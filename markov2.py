@@ -3,7 +3,7 @@ Thanks to @cjerdonek for your help on this exercise!
 from sys import argv
 script, txt = argv
 
-import random
+from random import choice
 
 def get_text(txt):
 	open_file = open(txt)
@@ -47,24 +47,24 @@ def make_sentence(d):
 	random_value1 = random.choice(values1) #selects 1 random value
 	temp_list.append(random_value1)
 	#print temp_list
-	#### ends first three words
+	#ends first three words
 
-	#### now we make a word chain	
+	#now make a word chain using the first three words	
 
 	max_length = 20
 	
 	for index in range(max_length-2):
-		last_words = (temp_list[-2], temp_list[-1])
-		if last_words in d:
-			values2 = d[last_words]
-			next_pair = random.choice(values2)
+		last_words = (temp_list[-2], temp_list[-1]) #pulls the last two words from the list, and formats it as a tuple
+		if last_words in d: #if tuple matches dictionary key
+			values2 = d[last_words] #gets the value list of that key
+			next_pair = random.choice(values2) #selects one value from the list 
 		else:
-			next_pair = random.choice(d.keys())
-		temp_list.append(next_pair)
-		first = next_pair
+			next_pair = random.choice(d.keys()) #in case the key has no values attached, choose random key
+		temp_list.append(next_pair) #insert the selected words into an empty list
+		first = next_pair #chain
 
-	string = " ".join(temp_list)
-	sentence = string.capitalize() + "."
+	string = " ".join(temp_list) #creates string from list
+	sentence = string.capitalize() + "." #capitalizes the first letter of the sentence and ends with a period.
 
 
 	return sentence
