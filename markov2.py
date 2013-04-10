@@ -57,11 +57,11 @@ def make_sentence(d):
     """
     # start with the first three words
     temp_list = [] # empty list to hold incoming words
-    word_pair = random.choice(d.keys()) # picks a random set of dictionary keys (x,y)
-    temp_list.append(word_pair[0]) # adds first word from key to list
-    temp_list.append(word_pair[1])  # adds second word from key to list
-    values1 = d.get(word_pair)  # finds values associated with the key
-    random_value1 = random.choice(values1) # selects 1 random value
+    word_pair = random.choice(d.keys()) # pick a random set of dictionary keys (x,y)
+    temp_list.append(word_pair[0]) # add first word from key to list
+    temp_list.append(word_pair[1])  # add second word from key to list
+    values1 = d.get(word_pair)  # find value associated with the key
+    random_value1 = random.choice(values1) # select one random value
     temp_list.append(random_value1)
 
     #### ends first three words
@@ -73,8 +73,8 @@ def make_sentence(d):
     for index in range(max_length-2): # subtract 2 words at end of list to prevent breaking
         last_words = (temp_list[-2], temp_list[-1])
         if last_words in d: # if tuple matches dictionary key
-            values2 = d[last_words] # gets the value list of that key
-            next_word = random.choice(values2) # selects one value from the list
+            values2 = d[last_words] # get the value list of that key
+            next_word = random.choice(values2) # select one value from the list
         else:
             word_pair = random.choice(d.keys()) # in case the key has no values attached, choose random key
             next_word = random.choice(word_pair) # insert the selected words into an empty list
@@ -96,6 +96,10 @@ def make_sentence(d):
 
 
 def main():
+    """
+    Call the function.
+    
+    """
     script, path = sys.argv
     text = get_text(path)
     word_list = strip_punction(text)
