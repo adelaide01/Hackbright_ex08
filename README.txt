@@ -1,14 +1,11 @@
-Exercise 08: Markov Chains (Hint: the answer is
-dictionaries) =======
+Hackbright_ex08
+=======
+
+Dictionary
+Eighth exercise from Hackbright Academy
 
 Introduction ------- A Markov chain is a sequence of random
-variables X1, X2, X3, etc., with the property that the
-present, past, and future states are independent. Formally,
-
-    Pr(Xn+1 = x|X1 = x1, X2 = x2, ... , Xn = xn) = Pr(Xn+1 =
-    x|Xn = xn)
-
-Just kidding, that's a terrible explanation.
+variables X1, X2, X3, etc.
 
 Colloquially, Markov chains are a statistical analysis of
 frequence patterns in some sequence. Consider the following
